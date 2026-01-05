@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 
-const ContactPage = () => {
-  const [formData, setFormData] = useState({
+const CareerPage = () => {
+  const [careerData, setCareerData] = useState({
     name: "",
     email: "",
-    message: "",
+    position: "",
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setCareerData({ ...careerData, [e.target.name]: e.target.value });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    console.log("Contact Form Data:", formData);
-    alert("Thank you! We will contact you soon.");
+    console.log("Career Application:", careerData);
+    alert("Application submitted successfully!");
 
-    setFormData({ name: "", email: "", message: "" });
+    setCareerData({ name: "", email: "", position: "" });
   };
 
   return (
     <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow">
-      <h2 className="text-2xl font-bold mb-4 text-center">📩 Contact Us</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">💼 Careers</h2>
 
       <form onSubmit={submitHandler} className="space-y-4">
         <input
           type="text"
           name="name"
-          placeholder="Your Name"
-          value={formData.name}
+          placeholder="Full Name"
+          value={careerData.name}
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded"
           required
@@ -38,32 +38,32 @@ const ContactPage = () => {
         <input
           type="email"
           name="email"
-          placeholder="Your Email"
-          value={formData.email}
+          placeholder="Email Address"
+          value={careerData.email}
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded"
           required
         />
 
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
+        <input
+          type="text"
+          name="position"
+          placeholder="Applying Position"
+          value={careerData.position}
           onChange={handleChange}
-          rows="4"
           className="w-full px-4 py-2 border rounded"
           required
         />
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
         >
-          Send Message
+          Apply Now
         </button>
       </form>
     </div>
   );
 };
 
-export default ContactPage;
+export default CareerPage;
