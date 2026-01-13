@@ -31,9 +31,9 @@ const UserHeader = () => {
                   }
                 >
                   Movies
-                  <span className="bg-yellow-400 text-black text-xs px-2 py-0.5 rounded-full">
+                  {/* <span className="bg-yellow-400 text-black text-xs px-2 py-0.5 rounded-full">
                     {movies}
-                  </span>
+                  </span> */}
                 </NavLink>
               </li>
 
